@@ -1,0 +1,28 @@
+<% include partials/header %>
+<div class="ui main text container">
+    <h1 class="ui huge header">Index Page</h1>
+    <div class="ui top attached raised segment">
+        <div class="ui divided items">
+            <% items.forEach(function(item){ %>
+            <div class="item">
+                <div class="image"><img src="<%=item.image%>"></div>
+                <div class="content">
+                    <a class="header" href="#"><%= item.name %></a>
+                    <div class="description">
+                        <p>seller: <%=item.seller%></p>
+                        <p>price: <%=item.price%></p>
+                    </div>
+                    <div class="extra">
+                        <a class="ui floated basic violet button" href="/index/<%=item._id%>">
+                            More Info
+                            <i class="caret rig"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    <a class="ui purple button" href="/index/new">Add item</a>
+</div>
+<% include partials/footer %>

@@ -1,0 +1,26 @@
+<% include partials/header %>
+<div class="ui container">
+    <div class="ui segment" style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 10%">
+        <h1 class="ui center aligned header">Edit <%=item.name%></h1>
+        <form class="ui form" action="/index/<%=item._id%>?_method=PUT" method="POST" style="width: 75%; margin: auto;">
+            <div class="field">
+                <input type="text" name="item[name]" placeholder="name" value="<%=item.name%>">
+            </div>
+            <div class="field">
+                <input type="text" name="item[seller]" placeholder="seller" value="<%=item.seller%>">
+            </div>
+            <div class="field">
+                <input type="text" name="item[image]" placeholder="image URL" value="<%=item.image%>">
+            </div>
+            <div class="field">
+                <input type="number" name="item[price]" placeholder="price" value="<%=item.price%>">
+            </div>
+            <div class="field">
+                <textarea name="item[desc]" cols="30" rows="10"><%=item.desc%></textarea>
+            </div>
+            <button class="ui blue button">Submit</button>
+            <a href="/index" style="margin: 2px;">Go Back</a>
+        </form>
+    </div>
+</div>
+<% include partials/footer %>
